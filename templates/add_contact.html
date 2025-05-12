@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Add Contact</h2>
+<form method="post">
+    {% include 'contact_form.html' %}
+    <button class="btn btn-primary">Add</button>
+</form>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Your Contacts</h2>
+<a href="{{ url_for('add_contact') }}">Add Contact</a>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Phone(s)</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>LinkedIn</th>
+    </tr>
+    {% for c in contacts %}
+    <tr>
+        <td>{{ c[2] }} {{ c[3] }}</td>
+        <td>{{ c[4] }}</td>
+        <td>{{ c[5] }}</td>
+        <td>{{ c[6] }}</td>
+        <td><a href="{{ c[7] }}">{{ c[7] }}</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

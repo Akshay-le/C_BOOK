@@ -1,0 +1,12 @@
+<input class="form-control my-2" name="first_name" placeholder="First Name" value="{{ contact.first_name if contact else '' }}">
+<input class="form-control my-2" name="last_name" placeholder="Last Name" value="{{ contact.last_name if contact else '' }}">
+<input class="form-control my-2" name="phone" placeholder="Phone" value="{{ contact.phone if contact else '' }}">
+<input class="form-control my-2" name="email" placeholder="Email" value="{{ contact.email if contact else '' }}">
+<input class="form-control my-2" name="address" placeholder="Address" value="{{ contact.address if contact else '' }}">
+<input class="form-control my-2" name="linkedin" placeholder="LinkedIn URL" value="{{ contact.linkedin if contact else '' }}">
+<select class="form-control my-2" name="category">
+    <option value="">Select Category</option>
+    {% for cat in ['family', 'friend', 'favorite', 'other'] %}
+    <option value="{{ cat }}" {% if contact and contact.category == cat %}selected{% endif %}>{{ cat }}</option>
+    {% endfor %}
+</select>
