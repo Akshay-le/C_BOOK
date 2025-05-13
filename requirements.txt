@@ -75,9 +75,6 @@ pycparser==2.22
 Pygments==2.19.1
 python-dateutil==2.9.0.post0
 python-json-logger==3.3.0
-pywin32==306
-pywinpty==2.0.15
-PyYAML==6.0.2
 pyzmq==26.3.0
 referencing==0.36.2
 requests==2.32.3
@@ -105,3 +102,7 @@ webencodings==0.5.1
 websocket-client==1.8.0
 Werkzeug==3.1.3
 widgetsnbextension==4.0.13
+
+# Windows-only packages (only installed on Windows)
+pywin32==306; sys_platform == "win32"
+pywinpty==2.0.15; sys_platform == "win32"
