@@ -77,6 +77,10 @@ class ContactBookApp:
         self.app.run(debug=debug)
 
 
+# Create an instance and expose the app for Gunicorn
+contact_book_app = ContactBookApp()
+app = contact_book_app.app  # This line is critical for Gunicorn to work: gunicorn app:app
+
+# Local dev execution
 if __name__ == '__main__':
-    app = ContactBookApp()
-    app.run()
+    contact_book_app.run()
